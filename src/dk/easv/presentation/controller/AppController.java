@@ -2,14 +2,12 @@ package dk.easv.presentation.controller;
 
 import dk.easv.entities.*;
 import dk.easv.presentation.model.AppModel;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.TilePane;
@@ -24,6 +22,10 @@ import java.util.List;
 
 
 public class AppController implements Initializable {
+    public TableView tableView;
+    public TableColumn movies;
+    public ImageView logo;
+    public ImageView backGroundImage;
     @FXML
     private Label lblSimilarUsers, lblAverageNotSeen, lblAverageSeen;
     @FXML
@@ -42,15 +44,39 @@ public class AppController implements Initializable {
     private List<TopMovie> getTopMoviesFromSimilarPeople;
 
     private AppModel model;
-    private long timerStartMillis = 0;
-    private String timerMsg = "";
 
-    private final int LINE_BREAK_LETTER=18;
+    private String[] liste={"Top Movies","New Movies","Top Series"," "};
+    private ObservableList<String> stringObservableList;
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        for (int i=0; i<liste.length; i++)
+                    tableView.getItems().addAll(new MovieShowInList(liste[i]));
+
+        movies.setCellValueFactory(new PropertyValueFactory<>("movieShowInListe"));
+
+        Image logoImage;
+        try {
+        logoImage =  new Image(new FileInputStream(("Resources/Pictures/Logo.png")));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        logo.setImage(logoImage);
+
+        try {
+            logoImage =  new Image(new FileInputStream(("Resources/Pictures/DarkGreyBackground.jpg")));
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        backGroundImage.setImage(logoImage);
+        backGroundImage.setScaleX(700);
+        backGroundImage.setScaleY(400);
+
 
     }
 

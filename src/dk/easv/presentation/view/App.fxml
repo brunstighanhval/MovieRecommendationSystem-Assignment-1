@@ -3,69 +3,102 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="807.0" prefWidth="1494.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.AppController">
-   <children>
-      <ImageView fx:id="LessThan1" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="125.0" rotate="180.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="LessThan2" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="420.0" rotate="180.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="LessThan3" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="750.0" rotate="180.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="GreaterThan2" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="420.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="GreaterThan3" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="750.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <ImageView fx:id="GreaterThan1" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="125.0">
-         <image>
-            <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </ImageView>
-      <Button fx:id="btnSignOut" layoutX="1408.0" layoutY="45.0" mnemonicParsing="false" onAction="#handelSignOut" text="Sign out" />
-      <TextField fx:id="lblLoggedInUser" alignment="CENTER_RIGHT" editable="false" layoutX="1325.0" layoutY="19.0" />
-      <TilePane fx:id="tilePane1" layoutX="250.0" layoutY="75.0" />
-      <TilePane fx:id="tilePane2" layoutX="250.0" layoutY="375.0" />
-      <TilePane fx:id="tilePane3" layoutX="250.0" layoutY="705.0" />
-      <Label layoutX="250" layoutY="50.0" text="Top Movies from similar users" />
-      <Label layoutX="250" layoutY="350.0" text="Top Average movies user did not see" />
-      <Label layoutX="250" layoutY="680.0" text="Top Average movies foe users" />
-   </children>
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.presentation.controller.AppController">
+   <center>
+      <AnchorPane fx:id="anchorPaneMiddle" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="844.0" prefWidth="1540.0">
+         <children>
+            <ImageView fx:id="backGroundImage" fitHeight="863.0" fitWidth="1541.0" layoutX="14.0" smooth="false">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/DarkGreyBackground.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="LessThan1" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="125.0" rotate="180.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="LessThan2" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="420.0" rotate="180.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="LessThan3" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="150.0" layoutY="750.0" rotate="180.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="GreaterThan2" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="420.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="GreaterThan3" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="750.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="GreaterThan1" accessibleRole="BUTTON" fitHeight="50.0" fitWidth="50.0" layoutX="1450.0" layoutY="125.0">
+               <image>
+                  <Image url="@../../../../../Resources/Pictures/GreaterThan.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <TilePane fx:id="tilePane1" layoutX="250.0" layoutY="35.0" />
+            <TilePane fx:id="tilePane2" layoutX="250.0" layoutY="345.0" />
+            <TilePane fx:id="tilePane3" layoutX="250.0" layoutY="675.0" />
+            <Label fx:id="lblSimilarUsers" layoutX="250" layoutY="0.0" text="Top Movies from similar users" />
+            <Label fx:id="lblAverageNotSeen" layoutX="250" layoutY="300.0" text="Top Average movies user did not see" />
+            <Label fx:id="lblAverageSeen" layoutX="250" layoutY="620.0" text="Top Average movies foe users" />
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <VBox prefHeight="807.0" prefWidth="183.0" style="-fx-background-color: D92121;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="77.0" prefWidth="220.0" />
+            <AnchorPane prefHeight="138.0" prefWidth="183.0">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="189.0" fitWidth="222.0" layoutX="-3.0" smooth="false">
+                     <image>
+                        <Image url="@../../../../../Resources/Pictures/Logo.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+            <TableView fx:id="tableView" prefHeight="344.0" prefWidth="202.0">
+              <columns>
+                <TableColumn fx:id="movies" prefWidth="176.79998475313187" text="movies" />
+              </columns>
+            </TableView>
+            <Button fx:id="btnSignOut" mnemonicParsing="false" onAction="#handelSignOut" text="Sign out" />
+            <TextField fx:id="lblLoggedInUser" alignment="BASELINE_LEFT" editable="false" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
