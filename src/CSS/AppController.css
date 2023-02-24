@@ -22,6 +22,16 @@
 
 
 
+
+#search
+{
+    -fx-border-radius: 20 20 20 20;
+    -fx-background-radius: 20 20 20 20;
+
+}
+
+
+
 #lblLoggedInUser{
     -fx-border-color: TRANSPARENT;
     -fx-background-color: TRANSPARENT;

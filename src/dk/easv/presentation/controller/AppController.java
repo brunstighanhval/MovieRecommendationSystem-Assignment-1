@@ -26,6 +26,7 @@ public class AppController implements Initializable {
     public TableColumn movies;
     public ImageView logo;
     public ImageView backGroundImage;
+    public TextField search;
     @FXML
     private Label lblSimilarUsers, lblAverageNotSeen, lblAverageSeen;
     @FXML
@@ -45,7 +46,7 @@ public class AppController implements Initializable {
 
     private AppModel model;
 
-    private String[] liste={"Top Movies","New Movies","Top Series"," "};
+    private String[] liste={"Top Movies","New Movies","Top Series","New Series", "Categories", "Favorites", "Settings" };
     private ObservableList<String> stringObservableList;
 
 
@@ -77,6 +78,7 @@ public class AppController implements Initializable {
         backGroundImage.setScaleX(700);
         backGroundImage.setScaleY(400);
 
+        search.setDisable(true);
 
     }
 
