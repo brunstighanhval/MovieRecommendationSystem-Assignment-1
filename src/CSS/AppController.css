@@ -52,6 +52,16 @@
     -fx-cursor: HAND;
 }
 
+<<<<<<< Updated upstream
+=======
+.label{
+    -fx-text-fill: WHITE;
+    -fx-font-family: "Verdana";
+    -fx-font-size: 16;
+
+}
+
+>>>>>>> Stashed changes
 #lblSimilarUsers{
     -fx-font-size: 30;
     -fx-font-weight: BOLD;
@@ -67,6 +77,7 @@
 
 }
 
+<<<<<<< Updated upstream
 
 .label{
     -fx-text-fill: WHITE;
@@ -139,3 +150,5 @@
     -fx-max-width: 0;
 
 }
+=======
+>>>>>>> Stashed changes
